@@ -15,13 +15,13 @@ if (!allowedDomains.includes(window.location.hostname)) {
 }
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCSGQ3byWdeWddsjDL9Dw53xm8ArouLZL0",
-    authDomain: "daqqafamily-5b678.firebaseapp.com",
-    projectId: "daqqafamily-5b678",
-    storageBucket: "daqqafamily-5b678.firebasestorage.app",
-    messagingSenderId: "24003001925",
-    appId: "1:24003001925:web:6f2c5ec0321df031b26d2c",
-    measurementId: "G-RFRYEB56HQ"
+     apiKey: "AIzaSyCau9gHB-Lx4a3YSfWa6ogxvXnwrI_fjTc",
+  authDomain: "daqqaf1.firebaseapp.com",
+  projectId: "daqqaf1",
+  storageBucket: "daqqaf1.firebasestorage.app",
+  messagingSenderId: "728991722046",
+  appId: "1:728991722046:web:1ade9f74eff08322a07f6f",
+  measurementId: "G-ZPFNBZH2PG"
 };
 
 Object.freeze(firebaseConfig); // حماية الإعدادات من التعديل
