@@ -3859,7 +3859,7 @@
             if (!container) return;
 
             const currentChecked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
-            const baseDelegates = ['الفراحين', 'الزنة', 'عبسان'];
+            const baseDelegates = ['دقات الفراحين','دقات عبسان','دقات بني سيلا','دقات الزنة','دقات الشحايدة','دقات الفخاري','دقات ديرالبلح',];
             const dataDelegates = window.families.map(f => f.pDelegate ? f.pDelegate.trim() : "").filter(d => d !== "");
             const delegates = [...new Set([...baseDelegates, ...dataDelegates])].sort();
 
