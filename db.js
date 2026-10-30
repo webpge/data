@@ -109,15 +109,25 @@ const app = initializeApp(firebaseConfig);
 // 4. تفعيل Firebase App Check
 // ===========================================
 
-const appCheck = initializeAppCheck(app, {
+// ملاحظة: يجب أن يكون مفتاح ReCaptcha Enterprise مضافاً في:
+// Google Cloud Console > reCAPTCHA Enterprise > إنشاء مفتاح للنوع "Website"
+// Firebase Console > App Check > تسجيل التطبيق
 
-  provider: new ReCaptchaEnterpriseProvider(
-    "6LeIFgguAAAAAMAdWhyN3XjO3mAhqAxsNYGm4C2U"
-  ),
+let appCheck = null;
 
-  isTokenAutoRefreshEnabled: true
+try {
+  appCheck = initializeAppCheck(app, {
+    provider: new ReCaptchaEnterpriseProvider(
+      "6LeIFgguAAAAAMAdWhyN3XjO3mAhqAxsNYGm4C2U"
+    ),
+    isTokenAutoRefreshEnabled: true
+  });
 
-});
+  console.log("✅ Firebase App Check تم تفعيله بنجاح");
+
+} catch (error) {
+  console.error("❌ خطأ في تفعيل App Check:", error.message);
+}
 
 
 // ===========================================
