@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>النظام الموحد عائلة ابو دقة </title>
     <!-- إعدادات الصورة المصغرة والمعاينة -->
-    <link rel="icon" href="https://i.ibb.co/HLyxynn5/image.png">
-    <link rel="apple-touch-icon" href="https://i.ibb.co/HLyxynn5/image.png">
-    <meta property="og:image" content="https://i.ibb.co/HLyxynn5/image.png">
+    <link rel="icon" href="https://i.ibb.co/6JHW70yL/logo.jpg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co/6JHW70yL/logo.jpg">
+    <meta property="og:image" content="https://i.ibb.co/6JHW70yL/logo.jpg">
     <meta property="og:title" content="النظام الموحد عائلة اابو دقة (في الوطن و الشتات) ">
     <meta property="og:description" content="نظام إدارة البيانات المركزي ">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -676,7 +676,7 @@
             <div class="mb-8">
                 <div
                     class="bg-indigo-600 w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-4 shadow-xl shadow-indigo-200">
-                    <img src="https://i.ibb.co/HLyxynn5/image.png"
+                    <img src="https://i.ibb.co/6JHW70yL/logo.jpg"
                         class="w-20 h-20 object-contain" alt="Logo" />
                 </div>
                 <h1 class="text-3xl font-black text-slate-800">عائلة ابو دقة (في الوطن و الشتات) </h1>
@@ -746,7 +746,7 @@
             </button>
             <div
                 class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-indigo-100 border border-slate-100 p-2">
-                <img src="https://i.ibb.co/HLyxynn5/image.png"
+                <img src="https://i.ibb.co/6JHW70yL/logo.jpg"
                     class="w-full h-full object-contain rounded-2xl">
             </div>
             <h2 class="text-2xl font-black text-slate-800 mb-2">تثبيت التطبيق</h2>
@@ -1145,12 +1145,12 @@
 
                     <div class="grid grid-cols-1 lg:grid-cols-6 gap-4 items-end mt-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-400 mb-2 mr-2">المندوب (بيانات
+                            <label class="block text-xs font-bold text-slate-400 mb-2 mr-2">الفرع (بيانات
                                 عائلية)</label>
                             <div class="multiselect-container" id="filterDelegate-container">
                                 <button onclick="toggleMultiSelect('filterDelegate')"
                                     class="multiselect-btn w-full bg-slate-50 border-none rounded-2xl p-4 text-sm font-bold text-slate-600 appearance-none cursor-pointer">
-                                    <span id="filterDelegate-label">كل المناديب</span>
+                                    <span id="filterDelegate-label">كل الأفرع</span>
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M19 9l-7 7-7-7"></path>
@@ -1842,10 +1842,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <select id="pDelegate"
                         class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold text-slate-600">
-                        <option value="">اختيار المندوب...</option>
-                        <option value="الفراحين">الفراحين</option>
-                        <option value="الزنة">الزنة</option>
-                        <option value="عبسان">عبسان</option>
+                        <option value="">اختيار الفرع ...</option>
+                        <option value="دقات عبسان">دقات عبسان</option>
+                <option value="دقات الفراحين">دقات الفراحين</option>
+                 <option value="دقات الشحايدة">دقات الشحايدة</option>
+                  <option value="دقات بني سيلا">دقات بني سيلا</option>
+                   <option value="دقات الزنة">دقات الزنة</option>
+                   <option value="دقات ديرالبلح">دقات ديرالبلح</option>
+                   <option value="دقات الفخاري">دقات الفخاري</option>
+                         
+                       
                     </select>
                     <input type="text" id="pAltPhone" maxlength="9" oninput="only9Numbers(this)" placeholder="جوال بديل"
                         class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-mono">
@@ -2441,7 +2447,7 @@
                                     <th class="p-3">الهوية</th>
                                     <th class="p-3">الجوال</th>
                                     <th class="p-3">العدد</th>
-                                    <th class="p-3">المندوب</th>
+                                    <th class="p-3">الفرع</th>
                                 </tr>
                             </thead>
                             <tbody id="benTableBody" class="text-sm font-bold text-slate-700 divide-y divide-slate-50">
@@ -2661,8 +2667,8 @@
             "background_color": "#f8fafc",
             "theme_color": "#4f46e5",
             "icons": [
-                { "src": "https://i.ibb.co/HLyxynn5/image.png", "sizes": "192x192", "type": "image/png" },
-                { "src": "https://i.ibb.co/HLyxynn5/image.png", "sizes": "512x512", "type": "image/png" }
+                { "src": "https://i.ibb.co/6JHW70yL/logo.jpg", "sizes": "192x192", "type": "image/png" },
+                { "src": "https://i.ibb.co/6JHW70yL/logo.jpg", "sizes": "512x512", "type": "image/png" }
             ]
         };
         const manifestLink = document.createElement('link');
@@ -2784,7 +2790,7 @@
             { id: 'widowStatus', label: 'حالة المتوفى', group: 'بيانات الزوج المتوفى' },
             { id: 'pPhone', label: 'رقم الجوال', group: 'بيانات الاتصال' },
             { id: 'pAltPhone', label: 'جوال بديل', group: 'بيانات الاتصال' },
-            { id: 'pDelegate', label: 'المندوب', group: 'بيانات الاتصال' },
+            { id: 'pDelegate', label: 'الفرع', group: 'بيانات الاتصال' },
             { id: 'residenceType', label: 'مكان الإقامة', group: 'بيانات الاتصال' },
             { id: 'residenceCountry', label: 'بلد الإقامة', group: 'بيانات الاتصال' },
             { id: 'originArea', label: 'السكن الأصلي', group: 'بيانات الاتصال' },
@@ -2923,7 +2929,7 @@
             wifeStatus: "حالة الزوجة",
             widowStatus: "حالة المتوفى",
             pSocial: "الحالة الاجتماعية",
-            pDelegate: "اسم المندوب",
+            pDelegate: "اسم الفرع",
             pAltPhone: "جوال بديل",
             residenceType: "مكان الإقامة",
             residenceCountry: "بلد الإقامة",
@@ -4786,7 +4792,7 @@
             if (isRestricted) {
                 thead.innerHTML = `<tr class="bg-slate-50/50 text-slate-500 text-xs font-bold uppercase tracking-wider border-b">
                     <th class="px-4 py-4">الاسم</th>
-                    <th class="px-4 py-4">المندوب</th>
+                    <th class="px-4 py-4">الفرع</th>
                     <th class="px-4 py-4 text-center">إجراءات</th>
                 </tr>`;
 
@@ -4902,13 +4908,17 @@
             document.getElementById('healthList').innerHTML = '';
             document.getElementById('modalTitle').innerText = 'إضافة بيانات عائلة';
 
-            // إعادة تعيين وتفعيل حقل المندوب
+            //إعادة تعيين وتفعيل حقل 
             const delInput = document.getElementById('pDelegate');
             delInput.innerHTML = `
-                <option value="">اختيار المندوب...</option>
-                <option value="الفراحين">الفراحين</option>
-                <option value="الزنة">الزنة</option>
-                <option value="عبسان">عبسان</option>
+                <option value="">اختيار الفرع...</option>
+               <option value="دقات عبسان">دقات عبسان</option>
+                <option value="دقات الفراحين">دقات الفراحين</option>
+                 <option value="دقات الشحايدة">دقات الشحايدة</option>
+                  <option value="دقات بني سيلا">دقات بني سيلا</option>
+                   <option value="دقات الزنة">دقات الزنة</option>
+                   <option value="دقات ديرالبلح">دقات ديرالبلح</option>
+                   <option value="دقات الفخاري">دقات الفخاري</option>
             `;
             delInput.disabled = false;
             delInput.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
@@ -5833,7 +5843,7 @@
         function downloadTemplate() {
             const headers = ["اسم رب الأسرة", "تاريخ ميلاد رب الأسرة", "هوية رب الأسرة", "اصدار الهوية", "رقم الجوال", "اسم الزوجة", "هوية الزوجة", "تاريخ ميلاد الزوجة", "حالة الزوجة", "الحالة الاجتماعية", "عدد الأفراد الكلي", "عدد الذكور", "عدد الإناث"];
             for (let i = 1; i <= 12; i++) headers.push(`اسم الفرد ${i}`, `صلة القرابة ${i}`, `تاريخ الميلاد الفرد ${i}`, `رقم الهوية الفرد ${i}`);
-            headers.push("منطقة السكن الأصلية", "منطقة النزوح", "طبيعة المأوى", "فترة النزوح", "طبيعة المواطن", "المندوب", "جوال بديل");
+            headers.push("منطقة السكن الأصلية", "منطقة النزوح", "طبيعة المأوى", "فترة النزوح", "طبيعة المواطن", "الفرع", "جوال بديل");
             for (let i = 1; i <= 5; i++) headers.push(`الاسم الحالة ${i}`, `رقم الهوية الحالة ${i}`, `رقم الجوال الحالة ${i}`, `نوع المرض ${i}`);
             headers.push("اسم المالك المحفظة", "رقم الهوية المحفظة", "رقم الجوال المحفظة");
             const ws = XLSX.utils.aoa_to_sheet([headers]);
@@ -5900,7 +5910,7 @@
                         shelterType: row["طبيعة المأوى"] || "",
                         displacementPeriod: row["فترة النزوح"] || "",
                         citizenStatus: row["طبيعة المواطن"] || "",
-                        pDelegate: row["المندوب"] || "",
+                        pDelegate: row["الفرع"] || "",
                         pAltPhone: String(row["جوال بديل"] || ""),
                         residenceType: row["مكان الإقامة"] || "",
                         residenceCountry: row["بلد الإقامة"] || "",
@@ -5966,7 +5976,7 @@
             data.push(["البيانات الأساسية للعائلة"]);
             data.push(["اسم رب الأسرة", f.pName || "", "رقم الهوية", f.pId || ""]);
             data.push(["تاريخ الميلاد", f.pDob || "", "رقم الجوال", f.pPhone || "", "اصدار الهوية", f.pIdIssue || ""]);
-            data.push(["الحالة الاجتماعية", f.pSocial || "", "المندوب", f.pDelegate || ""]);
+            data.push(["الحالة الاجتماعية", f.pSocial || "", "الفرع", f.pDelegate || ""]);
             data.push(["مكان الإقامة", f.residenceType || "", "بلد الإقامة", f.residenceCountry || ""]);
             data.push(["اسم الزوجة", f.wifeName || "", "هوية الزوجة", f.wifeId || "", "حالة الزوجة", f.wifeStatus || ""]);
             data.push(["تاريخ ميلاد الزوجة", f.wifeDob || "", "جوال بديل", f.pAltPhone || ""]);
@@ -6005,7 +6015,7 @@
                         <table class="print-table"><tr><th>الزوجة</th><td>${f.wifeName || '-'}</td></tr><tr><th>هوية الزوجة</th><td>${f.wifeId || '-'}</td></tr><tr><th>حالة الزوجة</th><td>${f.wifeStatus || '-'}</td></tr><tr><th>السكن الأصلي</th><td>${f.originArea || '-'}</td></tr><tr><th>منطقة النزوح</th><td>${f.displaceArea || '-'}</td></tr></table>
                     </div>
                     <table class="print-table" style="margin-top: 10px;"><tr><th>طبيعة المأوى</th><td>${f.shelterType || '-'}</td><th>فترة النزوح</th><td>${f.displacementPeriod || '-'}</td><th>طبيعة المواطن</th><td>${f.citizenStatus || '-'}</td></tr></table>
-                    <table class="print-table" style="margin-top: 10px;"><tr><th>المندوب</th><td>${f.pDelegate || '-'}</td><th>الحالة الاجتماعية</th><td>${f.pSocial || '-'}</td><th>مكان الإقامة</th><td>${f.residenceType || '-'}</td><th>بلد الإقامة</th><td>${f.residenceCountry || '-'}</td><th>عدد الأفراد</th><td>${f.totalCount || '0'}</td></tr></table>
+                    <table class="print-table" style="margin-top: 10px;"><tr><th>الفرع</th><td>${f.pDelegate || '-'}</td><th>الحالة الاجتماعية</th><td>${f.pSocial || '-'}</td><th>مكان الإقامة</th><td>${f.residenceType || '-'}</td><th>بلد الإقامة</th><td>${f.residenceCountry || '-'}</td><th>عدد الأفراد</th><td>${f.totalCount || '0'}</td></tr></table>
                     <div class="section-title">2. أفراد العائلة (${f.members ? f.members.length : 0})</div>
                     <table class="print-table"><thead><tr><th style="width: 30%">الاسم</th><th style="width: 15%">الصلة</th><th style="width: 15%">تاريخ الميلاد</th><th style="width: 15%">العمر</th><th style="width: 25%">رقم الهوية</th></tr></thead><tbody>
             `;
@@ -6237,7 +6247,7 @@
             }
 
             const wb = XLSX.utils.book_new();
-            const data = [["تقرير المستفيدين - نظام الأرشفة"], ["اسم الملف", meta.fileName, "نوع المساعدة", meta.type], ["الجهة المانحة", meta.donor, "تاريخ الاستفادة", meta.date], ["ملاحظات", meta.notes], [], ["اسم رب الأسرة", "رقم الهوية", "رقم الجوال", "عدد الأفراد", "المندوب", "الزوجة", "هوية الزوجة"]];
+            const data = [["تقرير المستفيدين - نظام الأرشفة"], ["اسم الملف", meta.fileName, "نوع المساعدة", meta.type], ["الجهة المانحة", meta.donor, "تاريخ الاستفادة", meta.date], ["ملاحظات", meta.notes], [], ["اسم رب الأسرة", "رقم الهوية", "رقم الجوال", "عدد الأفراد", "الفرع", "الزوجة", "هوية الزوجة"]];
             selectedFamilies.forEach(f => {
                 let count = 1;
                 if (f.wifeName && f.wifeName.trim() && f.pSocial !== 'ارمله') count++;
@@ -6414,7 +6424,7 @@
             if (selectedFamilies.length === 0) return alert("لم يتم العثور على بيانات العائلات المؤرشفة (ربما تم حذفها)");
 
             const wb = XLSX.utils.book_new();
-            const data = [["تقرير المستفيدين - أرشيف"], ["اسم الملف", meta.fileName, "نوع المساعدة", meta.type], ["الجهة المانحة", meta.donor, "تاريخ الاستفادة", meta.date], ["ملاحظات", meta.notes], [], ["اسم رب الأسرة", "رقم الهوية", "رقم الجوال", "عدد الأفراد", "المندوب", "الزوجة", "هوية الزوجة"]];
+            const data = [["تقرير المستفيدين - أرشيف"], ["اسم الملف", meta.fileName, "نوع المساعدة", meta.type], ["الجهة المانحة", meta.donor, "تاريخ الاستفادة", meta.date], ["ملاحظات", meta.notes], [], ["اسم رب الأسرة", "رقم الهوية", "رقم الجوال", "عدد الأفراد", "الفرع", "الزوجة", "هوية الزوجة"]];
             selectedFamilies.forEach(f => { data.push([f.pName, f.pId, f.pPhone, f.totalCount, f.pDelegate, f.wifeName, f.wifeId]); });
             const ws = XLSX.utils.aoa_to_sheet(data);
             ws['!cols'] = [{ wch: 25 }, { wch: 15 }, { wch: 15 }, { wch: 10 }, { wch: 15 }, { wch: 20 }, { wch: 15 }];
@@ -6439,7 +6449,7 @@
                             <div class="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
                                 <span class="px-4 py-2 bg-slate-100 rounded-xl text-sm font-bold text-slate-600">رقم الهوية (هوية الاب): ${f.pId}</span>
                                 <span class="px-4 py-2 bg-slate-100 rounded-xl text-sm font-bold text-slate-600">الجوال: ${f.pPhone}</span>
-                                <span class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-xl text-sm font-bold">المندوب: ${f.pDelegate || "غير محدد"}</span>
+                                <span class="px-4 py-2 bg-indigo-50 text-indigo-600 rounded-xl text-sm font-bold">الفرع: ${f.pDelegate || "غير محدد"}</span>
                             </div>
                         </div>
                         ${window.beneficiaryEditEnabled !== false ? `
@@ -6583,8 +6593,8 @@
 
             const options = {
                 body: body,
-                icon: 'https://i.ibb.co/HLyxynn5/image.png',
-                badge: 'https://i.ibb.co/HLyxynn5/image.png',
+                icon: 'https://i.ibb.co/6JHW70yL/logo.jpg',
+                badge: 'https://i.ibb.co/6JHW70yL/logo.jpg',
                 vibrate: [200, 100, 200]
             };
 
