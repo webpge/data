@@ -1158,14 +1158,11 @@
                                 </button>
                                 <div id="filterDelegate-options" class="multiselect-options custom-scroll">
                                     <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
-                                            value="موسى"> موسى</label>
+                                            value="الفراحين"> الفراحين</label>
                                     <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
-                                            value="نبيل"> نبيل</label>
+                                            value="الزنة"> الزنة</label>
                                     <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
-                                            value="عبدالحميد"> عبدالحميد</label>
-                                    <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
-                                            value="محمد عادل"> محمد عادل</label>
-
+                                            value="عبسان"> عبسان</label>
                                 </div>
                             </div>
                         </div>
@@ -1197,6 +1194,25 @@
                                     <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
                                             value="أيتام"> أيتام</label>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-2 mr-2">مكان الإقامة</label>
+                            <div class="multiselect-container" id="filterResidenceType-container">
+                                <button onclick="toggleMultiSelect('filterResidenceType')"
+                                    class="multiselect-btn w-full bg-slate-50 border-none rounded-2xl p-4 text-sm font-bold text-slate-600 appearance-none cursor-pointer">
+                                    <span id="filterResidenceType-label">كل الأماكن</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div id="filterResidenceType-options" class="multiselect-options custom-scroll">
+                                    <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
+                                            value="داخل البلد"> داخل البلد</label>
+                                    <label class="multiselect-option"><input type="checkbox" onchange="runFilters()"
+                                            value="خارج البلد"> خارج البلد</label>
                                 </div>
                             </div>
                         </div>
@@ -1266,7 +1282,7 @@
                             </div>
                         </div>
 
-                        <div class="lg:col-span-2 flex gap-3 hidden" id="adminActions">
+                        <div class="lg:col-span-6 flex gap-3 hidden mt-2" id="adminActions">
                             <button onclick="downloadTemplate()"
                                 class="flex-1 bg-white border border-slate-200 text-slate-600 p-4 rounded-2xl text-xs font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                                 تحميل النموذج
@@ -1824,10 +1840,221 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <input type="text" id="pDelegate" placeholder="المندوب"
-                        class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold">
+                    <select id="pDelegate"
+                        class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold text-slate-600">
+                        <option value="">اختيار المندوب...</option>
+                        <option value="الفراحين">الفراحين</option>
+                        <option value="الزنة">الزنة</option>
+                        <option value="عبسان">عبسان</option>
+                    </select>
                     <input type="text" id="pAltPhone" maxlength="9" oninput="only9Numbers(this)" placeholder="جوال بديل"
                         class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-mono">
+                    <select id="residenceType" onchange="handleResidenceTypeChange(this.value)"
+                        class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold text-slate-600">
+                        <option value="">مكان الإقامة</option>
+                        <option value="داخل البلد">داخل البلد</option>
+                        <option value="خارج البلد">خارج البلد</option>
+                    </select>
+                    <select id="residenceCountry" onchange="handleResidenceCountryChange(this.value)"
+                        class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold text-slate-600">
+                        <option value="">بلد الإقامة...</option>
+                        <option value="فلسطين">فلسطين</option>
+                        <option value="مصر">مصر</option>
+                        <option value="الأردن">الأردن</option>
+                        <option value="السعودية">السعودية</option>
+                        <option value="الإمارات العربية المتحدة">الإمارات العربية المتحدة</option>
+                        <option value="قطر">قطر</option>
+                        <option value="الكويت">الكويت</option>
+                        <option value="سلطنة عمان">سلطنة عمان</option>
+                        <option value="البحرين">البحرين</option>
+                        <option value="العراق">العراق</option>
+                        <option value="سوريا">سوريا</option>
+                        <option value="لبنان">لبنان</option>
+                        <option value="اليمن">اليمن</option>
+                        <option value="ليبيا">ليبيا</option>
+                        <option value="تونس">تونس</option>
+                        <option value="الجزائر">الجزائر</option>
+                        <option value="المغرب">المغرب</option>
+                        <option value="السودان">السودان</option>
+                        <option value="الصومال">الصومال</option>
+                        <option value="موريتانيا">موريتانيا</option>
+                        <option value="جيبوتي">جيبوتي</option>
+                        <option value="جزر القمر">جزر القمر</option>
+                        <option value="تركيا">تركيا</option>
+                        <option value="أفغانستان">أفغانستان</option>
+                        <option value="ألبانيا">ألبانيا</option>
+                        <option value="ألمانيا">ألمانيا</option>
+                        <option value="أندورا">أندورا</option>
+                        <option value="أنغولا">أنغولا</option>
+                        <option value="أنتيغوا وبربودا">أنتيغوا وبربودا</option>
+                        <option value="الأرجنتين">الأرجنتين</option>
+                        <option value="أرمينيا">أرمينيا</option>
+                        <option value="أستراليا">أستراليا</option>
+                        <option value="النمسا">النمسا</option>
+                        <option value="أذربيجان">أذربيجان</option>
+                        <option value="جزر البهاما">جزر البهاما</option>
+                        <option value="بنغلاديش">بنغلاديش</option>
+                        <option value="باربادوس">باربادوس</option>
+                        <option value="بيلاروسيا">بيلاروسيا</option>
+                        <option value="بلجيكا">بلجيكا</option>
+                        <option value="بليز">بليز</option>
+                        <option value="بنين">بنين</option>
+                        <option value="بوتان">بوتان</option>
+                        <option value="بوليفيا">بوليفيا</option>
+                        <option value="البوسنة والهرسك">البوسنة والهرسك</option>
+                        <option value="بوتسوانا">بوتسوانا</option>
+                        <option value="البرازيل">البرازيل</option>
+                        <option value="بروناي">بروناي</option>
+                        <option value="بلغاريا">بلغاريا</option>
+                        <option value="بوركينا فاسو">بوركينا فاسو</option>
+                        <option value="بوروندي">بوروندي</option>
+                        <option value="كمبوديا">كمبوديا</option>
+                        <option value="الكاميرون">الكاميرون</option>
+                        <option value="كندا">كندا</option>
+                        <option value="الرأس الأخضر">الرأس الأخضر</option>
+                        <option value="جمهورية أفريقيا الوسطى">جمهورية أفريقيا الوسطى</option>
+                        <option value="تشاد">تشاد</option>
+                        <option value="تشيلي">تشيلي</option>
+                        <option value="الصين">الصين</option>
+                        <option value="كولومبيا">كولومبيا</option>
+                        <option value="الكونغو">الكونغو</option>
+                        <option value="جمهورية الكونغو الديمقراطية">جمهورية الكونغو الديمقراطية</option>
+                        <option value="كوستاريكا">كوستاريكا</option>
+                        <option value="كوت ديفوار">كوت ديفوار</option>
+                        <option value="كرواتيا">كرواتيا</option>
+                        <option value="كوبا">كوبا</option>
+                        <option value="قبرص">قبرص</option>
+                        <option value="التشيك">التشيك</option>
+                        <option value="الدنمارك">الدنمارك</option>
+                        <option value="دومينيكا">دومينيكا</option>
+                        <option value="جمهورية الدومينيكان">جمهورية الدومينيكان</option>
+                        <option value="الإكوادور">الإكوادور</option>
+                        <option value="السلفادور">السلفادور</option>
+                        <option value="غينيا الاستوائية">غينيا الاستوائية</option>
+                        <option value="إريتريا">إريتريا</option>
+                        <option value="إستونيا">إستونيا</option>
+                        <option value="إسواتيني">إسواتيني</option>
+                        <option value="إثيوبيا">إثيوبيا</option>
+                        <option value="فيجي">فيجي</option>
+                        <option value="فنلندا">فنلندا</option>
+                        <option value="فرنسا">فرنسا</option>
+                        <option value="الغابون">الغابون</option>
+                        <option value="غامبيا">غامبيا</option>
+                        <option value="جورجيا">جورجيا</option>
+                        <option value="غانا">غانا</option>
+                        <option value="اليونان">اليونان</option>
+                        <option value="غرينادا">غرينادا</option>
+                        <option value="غواتيمالا">غواتيمالا</option>
+                        <option value="غينيا">غينيا</option>
+                        <option value="غينيا بيساو">غينيا بيساو</option>
+                        <option value="غيانا">غيانا</option>
+                        <option value="هايتي">هايتي</option>
+                        <option value="هندوراس">هندوراس</option>
+                        <option value="المجر">المجر</option>
+                        <option value="آيسلندا">آيسلندا</option>
+                        <option value="الهند">الهند</option>
+                        <option value="إندونيسيا">إندونيسيا</option>
+                        <option value="إيران">إيران</option>
+                        <option value="أيرلندا">أيرلندا</option>
+                        <option value="إيطاليا">إيطاليا</option>
+                        <option value="جامايكا">جامايكا</option>
+                        <option value="اليابان">اليابان</option>
+                        <option value="كازاخستان">كازاخستان</option>
+                        <option value="كينيا">كينيا</option>
+                        <option value="كيريباتي">كيريباتي</option>
+                        <option value="كوريا الشمالية">كوريا الشمالية</option>
+                        <option value="كوريا الجنوبية">كوريا الجنوبية</option>
+                        <option value="كوسوفو">كوسوفو</option>
+                        <option value="قيرغيزستان">قيرغيزستان</option>
+                        <option value="لاوس">لاوس</option>
+                        <option value="لاتفيا">لاتفيا</option>
+                        <option value="ليسوتو">ليسوتو</option>
+                        <option value="ليبيريا">ليبيريا</option>
+                        <option value="ليختنشتاين">ليختنشتاين</option>
+                        <option value="ليتوانيا">ليتوانيا</option>
+                        <option value="لوكسمبورغ">لوكسمبورغ</option>
+                        <option value="مدغشقر">مدغشقر</option>
+                        <option value="ملاوي">ملاوي</option>
+                        <option value="ماليزيا">ماليزيا</option>
+                        <option value="جزر المالديف">جزر المالديف</option>
+                        <option value="مالي">مالي</option>
+                        <option value="مالطا">مالطا</option>
+                        <option value="جزر مارشال">جزر مارشال</option>
+                        <option value="موريشيوس">موريشيوس</option>
+                        <option value="المكسيك">المكسيك</option>
+                        <option value="ميكرونيزيا">ميكرونيزيا</option>
+                        <option value="مولدوفا">مولدوفا</option>
+                        <option value="موناكو">موناكو</option>
+                        <option value="منغوليا">منغوليا</option>
+                        <option value="الجبل الأسود">الجبل الأسود</option>
+                        <option value="موزمبيق">موزمبيق</option>
+                        <option value="ميانمار">ميانمار</option>
+                        <option value="ناميبيا">ناميبيا</option>
+                        <option value="ناورو">ناورو</option>
+                        <option value="نيبال">نيبال</option>
+                        <option value="هولندا">هولندا</option>
+                        <option value="نيوزيلندا">نيوزيلندا</option>
+                        <option value="نيكاراغوا">نيكاراغوا</option>
+                        <option value="النيجر">النيجر</option>
+                        <option value="نيجيريا">نيجيريا</option>
+                        <option value="مقدونيا الشمالية">مقدونيا الشمالية</option>
+                        <option value="النرويج">النرويج</option>
+                        <option value="باكستان">باكستان</option>
+                        <option value="بالاو">بالاو</option>
+                        <option value="بنما">بنما</option>
+                        <option value="بابوا غينيا الجديدة">بابوا غينيا الجديدة</option>
+                        <option value="باراغواي">باراغواي</option>
+                        <option value="بيرو">بيرو</option>
+                        <option value="الفلبين">الفلبين</option>
+                        <option value="بولندا">بولندا</option>
+                        <option value="البرتغال">البرتغال</option>
+                        <option value="رومانيا">رومانيا</option>
+                        <option value="روسيا">روسيا</option>
+                        <option value="رواندا">رواندا</option>
+                        <option value="سانت كيتس ونيفيس">سانت كيتس ونيفيس</option>
+                        <option value="سانت لوسيا">سانت لوسيا</option>
+                        <option value="سانت فينسنت والغرينادين">سانت فينسنت والغرينادين</option>
+                        <option value="ساموا">ساموا</option>
+                        <option value="سان مارينو">سان مارينو</option>
+                        <option value="ساو تومي وبرينسيب">ساو تومي وبرينسيب</option>
+                        <option value="السنغال">السنغال</option>
+                        <option value="صربيا">صربيا</option>
+                        <option value="سيشل">سيشل</option>
+                        <option value="سيراليون">سيراليون</option>
+                        <option value="سنغافورة">سنغافورة</option>
+                        <option value="سلوفاكيا">سلوفاكيا</option>
+                        <option value="سلوفينيا">سلوفينيا</option>
+                        <option value="جزر سليمان">جزر سليمان</option>
+                        <option value="جنوب أفريقيا">جنوب أفريقيا</option>
+                        <option value="جنوب السودان">جنوب السودان</option>
+                        <option value="إسبانيا">إسبانيا</option>
+                        <option value="سريلانكا">سريلانكا</option>
+                        <option value="سورينام">سورينام</option>
+                        <option value="السويد">السويد</option>
+                        <option value="سويسرا">سويسرا</option>
+                        <option value="طاجيكستان">طاجيكستان</option>
+                        <option value="تنزانيا">تنزانيا</option>
+                        <option value="تايلاند">تايلاند</option>
+                        <option value="تيمور الشرقية">تيمور الشرقية</option>
+                        <option value="توغو">توغو</option>
+                        <option value="تونغا">تونغا</option>
+                        <option value="ترينيداد وتوباغو">ترينيداد وتوباغو</option>
+                        <option value="تركمانستان">تركمانستان</option>
+                        <option value="توفالو">توفالو</option>
+                        <option value="أوغندا">أوغندا</option>
+                        <option value="أوكرانيا">أوكرانيا</option>
+                        <option value="المملكة المتحدة">المملكة المتحدة</option>
+                        <option value="الولايات المتحدة الأمريكية">الولايات المتحدة الأمريكية</option>
+                        <option value="أوروغواي">أوروغواي</option>
+                        <option value="أوزبكستان">أوزبكستان</option>
+                        <option value="فانواتو">فانواتو</option>
+                        <option value="الفاتيكان">الفاتيكان</option>
+                        <option value="فنزويلا">فنزويلا</option>
+                        <option value="فيتنام">فيتنام</option>
+                        <option value="زامبيا">زامبيا</option>
+                        <option value="زيمبابوي">زيمبابوي</option>
+                        <option value="دولة أخرى">دولة أخرى</option>
+                    </select>
                     <input type="text" id="originArea" placeholder="السكن الأصلي"
                         class="bg-slate-50 border-none rounded-2xl p-5 text-sm font-bold">
                     <input type="text" id="displaceArea" placeholder="منطقة النزوح"
@@ -2558,6 +2785,8 @@
             { id: 'pPhone', label: 'رقم الجوال', group: 'بيانات الاتصال' },
             { id: 'pAltPhone', label: 'جوال بديل', group: 'بيانات الاتصال' },
             { id: 'pDelegate', label: 'المندوب', group: 'بيانات الاتصال' },
+            { id: 'residenceType', label: 'مكان الإقامة', group: 'بيانات الاتصال' },
+            { id: 'residenceCountry', label: 'بلد الإقامة', group: 'بيانات الاتصال' },
             { id: 'originArea', label: 'السكن الأصلي', group: 'بيانات الاتصال' },
             { id: 'displaceArea', label: 'منطقة النزوح', group: 'بيانات الاتصال' },
             { id: 'totalCount', label: 'العدد الكلي', group: 'الإحصائيات' },
@@ -2696,6 +2925,8 @@
             pSocial: "الحالة الاجتماعية",
             pDelegate: "اسم المندوب",
             pAltPhone: "جوال بديل",
+            residenceType: "مكان الإقامة",
+            residenceCountry: "بلد الإقامة",
             originArea: "منطقة السكن الأصلية",
             displaceArea: "منطقة النزوح الحالية",
             totalCount: "عدد الأفراد الكلي",
@@ -2718,6 +2949,73 @@
 
         function only9Numbers(input) { input.value = input.value.replace(/\D/g, '').substring(0, 9); }
         function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+        window.handleResidenceTypeChange = function (val) {
+            const countryEl = document.getElementById('residenceCountry');
+            if (!countryEl) return;
+
+            if (val === 'داخل البلد') {
+                // تفعيل فلسطين فقط وإخفاء وتعطيل كافة الدول الأخرى
+                Array.from(countryEl.options).forEach(opt => {
+                    if (opt.value === 'فلسطين') {
+                        opt.disabled = false;
+                        opt.hidden = false;
+                    } else if (opt.value === '') {
+                        opt.disabled = true;
+                        opt.hidden = true;
+                    } else {
+                        opt.disabled = true;
+                        opt.hidden = true;
+                    }
+                });
+                countryEl.value = 'فلسطين';
+            } else if (val === 'خارج البلد') {
+                // إتاحة كافة الدول وتعطيل وإخفاء خيار فلسطين تماماً
+                Array.from(countryEl.options).forEach(opt => {
+                    if (opt.value === 'فلسطين') {
+                        opt.disabled = true;
+                        opt.hidden = true;
+                    } else {
+                        opt.disabled = false;
+                        opt.hidden = false;
+                    }
+                });
+                if (countryEl.value === 'فلسطين' || !countryEl.value) {
+                    countryEl.value = '';
+                }
+            } else {
+                // إعادة تفعيل وإظهار كافة الخيارات
+                Array.from(countryEl.options).forEach(opt => {
+                    opt.disabled = false;
+                    opt.hidden = false;
+                });
+            }
+        };
+
+        window.handleResidenceCountryChange = function (val) {
+            const typeEl = document.getElementById('residenceType');
+            const countryEl = document.getElementById('residenceCountry');
+            if (!typeEl || !countryEl) return;
+
+            if (val === 'فلسطين') {
+                if (typeEl.value === 'خارج البلد') {
+                    alert("ممنوع تحديد فلسطين كبلد إقامة عند اختيار 'خارج البلد'. يرجى اختيار دولة الإقامة خارج البلد.");
+                    countryEl.value = '';
+                    return;
+                }
+                typeEl.value = 'داخل البلد';
+                handleResidenceTypeChange('داخل البلد');
+            } else if (val && val !== '') {
+                if (typeEl.value === 'داخل البلد') {
+                    alert("المقيمون داخل البلد يتم تحديد بلدهم تلقائياً 'فلسطين' فقط لا غير.");
+                    countryEl.value = 'فلسطين';
+                    return;
+                }
+                typeEl.value = 'خارج البلد';
+                handleResidenceTypeChange('خارج البلد');
+                countryEl.value = val;
+            }
+        };
 
         function isQuadrupleName(name) {
             if (!name) return false;
@@ -3547,7 +3845,9 @@
             if (!container) return;
 
             const currentChecked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
-            const delegates = [...new Set(window.families.map(f => f.pDelegate ? f.pDelegate.trim() : "").filter(d => d !== ""))].sort();
+            const baseDelegates = ['الفراحين', 'الزنة', 'عبسان'];
+            const dataDelegates = window.families.map(f => f.pDelegate ? f.pDelegate.trim() : "").filter(d => d !== "");
+            const delegates = [...new Set([...baseDelegates, ...dataDelegates])].sort();
 
             let html = '';
             delegates.forEach(d => {
@@ -3599,6 +3899,7 @@
             const familyStatusFilters = getCheckedValues('filterFamilyStatus');
             const shelterTypeFilters = getCheckedValues('filterShelterType');
             const widowStatusFilters = getCheckedValues('filterWidowStatus');
+            const residenceTypeFilters = getCheckedValues('filterResidenceType');
 
             // Update Labels (Optional UX improvement)
             let ageLabel = ageFilters.length > 0 ? `تم اختيار ${ageFilters.length}` : 'اختيار الفئات العمرية...';
@@ -3613,6 +3914,10 @@
             document.getElementById('filterFamilyStatus-label').innerText = familyStatusFilters.length > 0 ? `تم اختيار ${familyStatusFilters.length}` : 'كل الحالات';
             document.getElementById('filterShelterType-label').innerText = shelterTypeFilters.length > 0 ? `تم اختيار ${shelterTypeFilters.length}` : 'كل الحالات';
             document.getElementById('filterWidowStatus-label').innerText = widowStatusFilters.length > 0 ? `تم اختيار ${widowStatusFilters.length}` : 'الكل (شهيد/متوفى)';
+            const resTypeLabelEl = document.getElementById('filterResidenceType-label');
+            if (resTypeLabelEl) {
+                resTypeLabelEl.innerText = residenceTypeFilters.length > 0 ? `تم اختيار ${residenceTypeFilters.length}` : 'كل الأماكن';
+            }
 
             // إذا كنا في وضع عرض المستفيدين المختارين، لا نطبق الفلاتر العادية، فقط نعرض القائمة
             if (isSelectedViewActive) {
@@ -3637,6 +3942,8 @@
             const matchesSearch = (f) => (f.pName || "").toLowerCase().includes(search) ||
                 (f.pId || "").includes(search) ||
                 (f.pDelegate || "").toLowerCase().includes(search) ||
+                (f.residenceType || "").toLowerCase().includes(search) ||
+                (f.residenceCountry || "").toLowerCase().includes(search) ||
                 (f.totalCount || "").toString().includes(search);
 
             const matchesFamilyFilters = (f) => {
@@ -3646,12 +3953,15 @@
                 const mShelterType = shelterTypeFilters.length === 0 || shelterTypeFilters.includes('all') || shelterTypeFilters.includes((f.shelterType || "").trim());
                 const mWidowStatus = widowStatusFilters.length === 0 || widowStatusFilters.includes('all') || widowStatusFilters.includes((f.widowStatus || "").trim());
 
+                const resType = (f.residenceType && f.residenceType.trim()) ? f.residenceType.trim() : "داخل البلد";
+                const mResidenceType = residenceTypeFilters.length === 0 || residenceTypeFilters.includes('all') || residenceTypeFilters.includes(resType);
+
                 let calculatedCount = 1;
                 if (f.wifeName && f.wifeName.trim()) calculatedCount++;
                 if (f.members && Array.isArray(f.members)) calculatedCount += f.members.length;
 
                 const mCount = countFilters.length === 0 || countFilters.includes('all') || countFilters.includes(calculatedCount.toString());
-                return mDelegate && mSocial && mCount && mFamilyStatus && mShelterType && mWidowStatus;
+                return mDelegate && mSocial && mCount && mFamilyStatus && mShelterType && mWidowStatus && mResidenceType;
             };
 
             const isRestricted = window.currentUserData?.role === 'viewer' && !hasPerm('view_all');
@@ -4208,6 +4518,8 @@
                 case 'pPhone': return `<span class="font-mono text-slate-500">${mask(row.pPhone ? '0' + row.pPhone : '')}</span>`;
                 case 'pAltPhone': return `<span class="font-mono text-slate-500">${mask(row.pAltPhone ? '0' + row.pAltPhone : '')}</span>`;
                 case 'pDelegate': return `<span class="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-lg text-xs font-bold">${row.pDelegate || '-'}</span>`;
+                case 'residenceType': return row.residenceType ? `<span class="px-3 py-1 bg-sky-50 text-sky-600 rounded-lg text-xs font-bold">${row.residenceType}</span>` : '-';
+                case 'residenceCountry': return row.residenceCountry ? `<span class="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-xs font-bold">${row.residenceCountry}</span>` : '-';
                 case 'pSocial': return `<span class="text-xs font-bold">${row.pSocial || '-'}</span>`;
                 case 'originArea': return row.originArea || '-';
                 case 'displaceArea': return row.displaceArea || '-';
@@ -4377,6 +4689,8 @@
                 case 'pPhone': return row.pPhone ? '0' + row.pPhone : '-';
                 case 'pAltPhone': return row.pAltPhone ? '0' + row.pAltPhone : '-';
                 case 'pDelegate': return row.pDelegate || '-';
+                case 'residenceType': return row.residenceType || '-';
+                case 'residenceCountry': return row.residenceCountry || '-';
                 case 'pSocial': return row.pSocial || '-';
                 case 'originArea': return row.originArea || '-';
                 case 'displaceArea': return row.displaceArea || '-';
@@ -4588,11 +4902,20 @@
             document.getElementById('healthList').innerHTML = '';
             document.getElementById('modalTitle').innerText = 'إضافة بيانات عائلة';
 
-            // إعادة تفعيل حقل المندوب للوضع الافتراضي (للمدراء)
+            // إعادة تعيين وتفعيل حقل المندوب
             const delInput = document.getElementById('pDelegate');
+            delInput.innerHTML = `
+                <option value="">اختيار المندوب...</option>
+                <option value="الفراحين">الفراحين</option>
+                <option value="الزنة">الزنة</option>
+                <option value="عبسان">عبسان</option>
+            `;
             delInput.disabled = false;
             delInput.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
             delInput.classList.add('bg-slate-50');
+
+            // إعادة ضبط خيارات مكان وبلد الإقامة
+            handleResidenceTypeChange('');
 
             // التحكم في ظهور حالة العائلة
             const statusEl = document.getElementById('pFamilyStatus');
@@ -4921,6 +5244,17 @@
                 }
             }
 
+            // التحقق من توافق مكان الإقامة وبلد الإقامة
+            const rType = document.getElementById('residenceType').value;
+            const rCountry = document.getElementById('residenceCountry').value;
+            if (rType === 'داخل البلد') {
+                document.getElementById('residenceCountry').value = 'فلسطين';
+            } else if (rType === 'خارج البلد') {
+                if (rCountry === 'فلسطين') {
+                    return alert("تنبيه: ممنوع اختيار 'فلسطين' كبلد إقامة إذا تم تحديد مكان الإقامة 'خارج البلد'. يرجى اختيار دولة أخرى.");
+                }
+            }
+
             // حساب الأعداد تلقائياً بناءً على المدخلات
             const counts = calculateFamilyCounts();
 
@@ -4941,6 +5275,8 @@
                 wifeGender: document.getElementById('wifeGender').value,
                 pDelegate: document.getElementById('pDelegate').value,
                 pAltPhone: document.getElementById('pAltPhone').value,
+                residenceType: document.getElementById('residenceType').value,
+                residenceCountry: document.getElementById('residenceCountry').value,
                 originArea: document.getElementById('originArea').value,
                 originCluster: document.getElementById('originCluster').value,
                 originNeighborhood: document.getElementById('originNeighborhood').value,
@@ -4982,11 +5318,7 @@
                 updatedAt: new Date().toISOString()
             };
 
-            // حماية إضافية: منع المستفيد من تغيير المندوب حتى لو تلاعب بالحقل
-            if (window.currentUserData.role === 'beneficiary') {
-                const original = window.families.find(f => f.id === editId);
-                if (original) payload.pDelegate = original.pDelegate;
-            }
+
 
             try {
                 if (editId) {
@@ -5009,8 +5341,36 @@
 
             Object.keys(f).forEach(key => {
                 const el = document.getElementById(key);
-                if (el && key !== 'members' && key !== 'health') el.value = f[key] || '';
+                if (el && key !== 'members' && key !== 'health') {
+                    if (key === 'pDelegate' && f.pDelegate) {
+                        const exists = Array.from(el.options).some(o => o.value === f.pDelegate);
+                        if (!exists && f.pDelegate.trim() !== '') {
+                            const opt = document.createElement('option');
+                            opt.value = f.pDelegate;
+                            opt.textContent = f.pDelegate;
+                            el.appendChild(opt);
+                        }
+                    }
+                    if (key === 'residenceCountry' && f.residenceCountry) {
+                        const exists = Array.from(el.options).some(o => o.value === f.residenceCountry);
+                        if (!exists && f.residenceCountry.trim() !== '') {
+                            const opt = document.createElement('option');
+                            opt.value = f.residenceCountry;
+                            opt.textContent = f.residenceCountry;
+                            el.appendChild(opt);
+                        }
+                    }
+                    el.value = f[key] || '';
+                }
             });
+
+            // تطبيق قيود مكان وبلد الإقامة عند التعديل
+            if (f.residenceType) {
+                handleResidenceTypeChange(f.residenceType);
+                if (f.residenceCountry) document.getElementById('residenceCountry').value = f.residenceCountry;
+            } else {
+                handleResidenceTypeChange('');
+            }
 
             // تطبيق منطق الجنس تلقائياً للبيانات القديمة التي لا تحتوي على حقل الجنس
             if (!f.pGender) {
@@ -5029,14 +5389,6 @@
             if (f.health) f.health.forEach(h => addHealthRow(h));
 
             calculateFamilyCounts();
-
-            // تعطيل حقل المندوب للمستفيدين فقط
-            if (window.currentUserData.role === 'beneficiary') {
-                const delInput = document.getElementById('pDelegate');
-                delInput.disabled = true;
-                delInput.classList.remove('bg-slate-50');
-                delInput.classList.add('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
-            }
 
             document.getElementById('formModal').classList.remove('hidden');
         }
@@ -5229,7 +5581,23 @@
                 document.getElementById('pAltPhone').value = familyData.pAltPhone || '';
                 document.getElementById('pGender').value = familyData.pGender || 'ذكر';
                 document.getElementById('pSocial').value = familyData.pSocial || 'متزوج';
-                document.getElementById('pDelegate').value = familyData.pDelegate || '';
+                const delEl = document.getElementById('pDelegate');
+                if (familyData.pDelegate && !Array.from(delEl.options).some(o => o.value === familyData.pDelegate)) {
+                    const opt = document.createElement('option');
+                    opt.value = familyData.pDelegate;
+                    opt.textContent = familyData.pDelegate;
+                    delEl.appendChild(opt);
+                }
+                delEl.value = familyData.pDelegate || '';
+                document.getElementById('residenceType').value = familyData.residenceType || '';
+                const rcEl = document.getElementById('residenceCountry');
+                if (familyData.residenceCountry && !Array.from(rcEl.options).some(o => o.value === familyData.residenceCountry)) {
+                    const opt = document.createElement('option');
+                    opt.value = familyData.residenceCountry;
+                    opt.textContent = familyData.residenceCountry;
+                    rcEl.appendChild(opt);
+                }
+                rcEl.value = familyData.residenceCountry || '';
                 document.getElementById('originArea').value = familyData.originArea || '';
                 document.getElementById('originCluster').value = familyData.originCluster || '';
                 document.getElementById('originNeighborhood').value = familyData.originNeighborhood || '';
@@ -5534,6 +5902,8 @@
                         citizenStatus: row["طبيعة المواطن"] || "",
                         pDelegate: row["المندوب"] || "",
                         pAltPhone: String(row["جوال بديل"] || ""),
+                        residenceType: row["مكان الإقامة"] || "",
+                        residenceCountry: row["بلد الإقامة"] || "",
                         walletOwner: row["اسم المالك المحفظة"] || "",
                         walletId: String(row["رقم الهوية المحفظة"] || ""),
                         walletPhone: String(row["رقم الجوال المحفظة"] || "")
@@ -5597,6 +5967,7 @@
             data.push(["اسم رب الأسرة", f.pName || "", "رقم الهوية", f.pId || ""]);
             data.push(["تاريخ الميلاد", f.pDob || "", "رقم الجوال", f.pPhone || "", "اصدار الهوية", f.pIdIssue || ""]);
             data.push(["الحالة الاجتماعية", f.pSocial || "", "المندوب", f.pDelegate || ""]);
+            data.push(["مكان الإقامة", f.residenceType || "", "بلد الإقامة", f.residenceCountry || ""]);
             data.push(["اسم الزوجة", f.wifeName || "", "هوية الزوجة", f.wifeId || "", "حالة الزوجة", f.wifeStatus || ""]);
             data.push(["تاريخ ميلاد الزوجة", f.wifeDob || "", "جوال بديل", f.pAltPhone || ""]);
             data.push(["السكن الأصلي", f.originArea || "", "منطقة النزوح", f.displaceArea || ""]);
@@ -5634,7 +6005,7 @@
                         <table class="print-table"><tr><th>الزوجة</th><td>${f.wifeName || '-'}</td></tr><tr><th>هوية الزوجة</th><td>${f.wifeId || '-'}</td></tr><tr><th>حالة الزوجة</th><td>${f.wifeStatus || '-'}</td></tr><tr><th>السكن الأصلي</th><td>${f.originArea || '-'}</td></tr><tr><th>منطقة النزوح</th><td>${f.displaceArea || '-'}</td></tr></table>
                     </div>
                     <table class="print-table" style="margin-top: 10px;"><tr><th>طبيعة المأوى</th><td>${f.shelterType || '-'}</td><th>فترة النزوح</th><td>${f.displacementPeriod || '-'}</td><th>طبيعة المواطن</th><td>${f.citizenStatus || '-'}</td></tr></table>
-                    <table class="print-table" style="margin-top: 10px;"><tr><th>المندوب</th><td>${f.pDelegate || '-'}</td><th>الحالة الاجتماعية</th><td>${f.pSocial || '-'}</td><th>عدد الأفراد</th><td>${f.totalCount || '0'}</td></tr></table>
+                    <table class="print-table" style="margin-top: 10px;"><tr><th>المندوب</th><td>${f.pDelegate || '-'}</td><th>الحالة الاجتماعية</th><td>${f.pSocial || '-'}</td><th>مكان الإقامة</th><td>${f.residenceType || '-'}</td><th>بلد الإقامة</th><td>${f.residenceCountry || '-'}</td><th>عدد الأفراد</th><td>${f.totalCount || '0'}</td></tr></table>
                     <div class="section-title">2. أفراد العائلة (${f.members ? f.members.length : 0})</div>
                     <table class="print-table"><thead><tr><th style="width: 30%">الاسم</th><th style="width: 15%">الصلة</th><th style="width: 15%">تاريخ الميلاد</th><th style="width: 15%">العمر</th><th style="width: 25%">رقم الهوية</th></tr></thead><tbody>
             `;
@@ -6095,6 +6466,8 @@
                                 <div class="flex justify-between"><span>الزوجة:</span> <span class="font-bold">${f.wifeName || '-'}</span></div>
                                 <div class="flex justify-between"><span>حالة الزوجة:</span> <span class="font-bold">${f.wifeStatus || '-'}</span></div>
                                 <div class="flex justify-between"><span>السكن:</span> <span class="font-bold">${f.originArea || '-'}</span></div>
+                                <div class="flex justify-between"><span>مكان الإقامة:</span> <span class="font-bold text-sky-600">${f.residenceType || '-'}</span></div>
+                                <div class="flex justify-between"><span>بلد الإقامة:</span> <span class="font-bold text-emerald-600">${f.residenceCountry || '-'}</span></div>
                                 <div class="flex justify-between"><span>النزوح:</span> <span class="font-bold">${f.displaceArea || '-'}</span></div>
                             </div>
                         </div>
